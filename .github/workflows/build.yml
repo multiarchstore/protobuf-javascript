@@ -15,6 +15,12 @@ jobs:
     steps:
 
       - uses: actions/checkout@v4
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
           
       - name: Install Protoc and build
         uses: addnab/docker-run-action@v3
