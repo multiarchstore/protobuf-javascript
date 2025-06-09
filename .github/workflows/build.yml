@@ -30,7 +30,7 @@ jobs:
           run: |
             cd /work
             export DEBIAN_FRONTEND=noninteractive
-            apt update; apt install sudo curl wget libprotobuf-dev npm nodejs build-essential -y
+            apt update; apt install sudo curl wget libprotobuf-dev npm nodejs build-essential bazel-bootstrap -y
             git config --global --add safe.directory /work
 
             npm ci
