@@ -21,12 +21,18 @@ config_setting(
     values = {"cpu": "k8"},
 )
 
+config_setting(
+    name = "loong64_linux",
+    values = {"cpu": "loong64_linux"},
+)
+
 package_naming(
     name = "protobuf_javascript_pkg_naming",
     platform = select({
         ":k8": "linux-x86_64", # currently the only supported build type in Github Actions
         ":x64_x86_windows": "win32",
         ":x64_windows": "win64",
+        ":loong64_linux": "linux-loong64",
         "//conditions:default": "" # continues with current behavior when no --cpu is specified allowing existing internal builds to function
     })
 )
